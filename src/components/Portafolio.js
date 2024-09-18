@@ -12,7 +12,7 @@ export const Portafolio = () => {
           return(
             <article key={trabajo.id} className='work-item'>
               <div className='masc'>
-                  <img src={"/images/"+trabajo.id+".png"} alt={trabajo.nombre}/>
+              <img src={`${process.env.PUBLIC_URL}/images/${trabajo.id}.png`} alt={trabajo.nombre} />
               </div>
               <h2>
                 {/* Uso de <a> para redirigir a una URL externa */}
