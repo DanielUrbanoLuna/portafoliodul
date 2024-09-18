@@ -5,14 +5,18 @@ export const Curriculum = () => {
   const handleDownloadPDF = () => {
     // Selecciona el contenedor del currículum
     const element = document.querySelector('.curriculum-container');
-
+  
     // Configura las opciones para html2pdf
     const opt = {
       margin: 0.5,
       filename: 'Mi_Curriculum.pdf',
       image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+      html2canvas: { scale: 1 }, // Ajustar el escalado si es necesario
+      jsPDF: { 
+        unit: 'in', 
+        format: [13, 13], // Tamaño A4 en pulgadas
+        orientation: 'portrait' 
+      }
     };
 
     // Genera y descarga el PDF
