@@ -10,7 +10,7 @@ import { HeaderNav } from '../components/layout/HeaderNav';
 
 export const MisRutas = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/portafoliodul'>
         {/*HEADER Y NAVEGACION*/}
         <HeaderNav />
 
