@@ -27,7 +27,7 @@ export const Inicio = () => {
       <div className='intro-section'>
         {/* Nuevo contenedor con clase flex-container */}
         <div className="flex-container">
-          <img src="/images/mifoto.png" alt="Daniel Urbano Luna" className="profile-photo2" />  
+          <img src={`${process.env.PUBLIC_URL}/images/mifoto.png`} alt="Daniel Urbano Luna" className="profile-photo2"/>  
           <div className='text-content'>
             <h2 className='heading'>
               Hola, mi nombre es Daniel Urbano Luna. Soy <strong>desarrollador web</strong> en Barcelona. Ofrezco mis 

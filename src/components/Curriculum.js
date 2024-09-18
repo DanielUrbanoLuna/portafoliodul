@@ -37,7 +37,8 @@ export const Curriculum = () => {
         <div className='left-column'>
           {/* Fila 1: Foto */}
           <div className='content-section'>
-            <img src="/images/mifoto.png" alt="Mi Foto" className="profile-photo" />
+            <img src={`${process.env.PUBLIC_URL}/images/mifoto.png`} alt="Daniel Urbano Luna" />
+
           </div>
 
           {/* Fila 2: Datos de contacto, aptitudes, idiomas, cursos */}
