@@ -14,7 +14,7 @@ export const Inicio = () => {
       margin: 0.5,
       filename: 'Mi_Curriculum.pdf',
       image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2 },
+      html2canvas: { scale: 1 },
       jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
     };
 
