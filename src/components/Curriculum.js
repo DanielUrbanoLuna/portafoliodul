@@ -57,7 +57,8 @@ export const Curriculum = () => {
                 <li>Depuración de código</li>
                 <li>Código limpio y bien comentado</li>
                 <li>Código escalable e interactivo</li>
-                <li>Control de versiones</li>
+                <li>Control de versiones GIT</li>
+                <li>GITHUB</li>
                 <li>Pruebas unitarias</li>
                 <li>Despliegue de aplicaciones</li>
                 <li>Trabajo en equipo</li>
