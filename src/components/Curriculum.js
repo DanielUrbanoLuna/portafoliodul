@@ -14,11 +14,11 @@ export const Curriculum = () => {
       html2canvas: { scale: 1 }, // Ajustar el escalado si es necesario
       jsPDF: { 
         unit: 'in', 
-        format: [13, 13], // Tamaño A4 en pulgadas
+        format: [19, 13], // Tamaño A4 en pulgadas
         orientation: 'portrait' 
       }
     };
-
+  
     // Genera y descarga el PDF
     html2pdf().from(element).set(opt).save();
   };
@@ -149,7 +149,7 @@ export const Curriculum = () => {
 
             <div className='cv1'>
               <h2>Conocimientos</h2>
-              <img src="images/conocimientos.png" className="iconos"/>
+              <img src={`${process.env.PUBLIC_URL}/images/conocimientos.png`} alt="Daniel Urbano Luna" />
             </div> 
 
             <div className='education-section'>

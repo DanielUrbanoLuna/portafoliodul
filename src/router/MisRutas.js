@@ -17,13 +17,15 @@ export const MisRutas = () => {
       {/* CONTENIDO PRINCIPAL */}
       <section className="content">
         <Routes>
-          <Route path="/" element={<Navigate to="/inicio" />} />
+          {/* Ruta inicial */}
+          <Route path="/" element={<Inicio />} />
           <Route path="/inicio" element={<Inicio />} />
           <Route path="/portafolio" element={<Portafolio />} />
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/curriculum" element={<Curriculum />} />
           <Route path="/contacto" element={<Contacto />} />
-          <Route path="*" element={<h1 className="header">Error 404</h1>} />
+          {/* Redirección si la ruta no existe */}
+          <Route path="*" element={<Navigate to="/inicio" />} />
         </Routes>
       </section>
 
@@ -31,4 +33,4 @@ export const MisRutas = () => {
       <Footer />
     </HashRouter>
   );
-}
+};
