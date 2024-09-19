@@ -17,7 +17,7 @@ export const Inicio = () => {
       html2canvas: { scale: 0.5 }, // Ajustar el escalado si es necesario
       jsPDF: { 
         unit: 'in', 
-        format: [19, 13], // Tamaño A4 en pulgadas
+        format: [9, 13], // Tamaño A4 en pulgadas
         orientation: 'portrait' 
       }
     };
