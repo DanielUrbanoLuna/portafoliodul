@@ -15,7 +15,7 @@ export const DescargarCvPdf = () => {
       html2canvas: { scale: 1.2 }, // Ajustar el escalado para adaptarse mejor al tamaño A4
       jsPDF: { 
         unit: 'in', 
-        format: [8.27, 11.69], // Tamaño A4 en pulgadas
+        format: [4.27, 11.69], // Tamaño A4 en pulgadas
         orientation: 'portrait' // Vertical
       }
     };
