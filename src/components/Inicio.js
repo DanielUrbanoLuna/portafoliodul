@@ -14,7 +14,7 @@ export const Inicio = () => {
       margin: 0.5,
       filename: 'Mi_Curriculum.pdf',
       image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 1 }, // Ajustar el escalado si es necesario
+      html2canvas: { scale: 0.5 }, // Ajustar el escalado si es necesario
       jsPDF: { 
         unit: 'in', 
         format: [19, 13], // Tamaño A4 en pulgadas
