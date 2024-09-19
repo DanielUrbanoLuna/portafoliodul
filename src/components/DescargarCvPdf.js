@@ -12,10 +12,10 @@ export const DescargarCvPdf = () => {
       margin: 0.5,
       filename: 'Mi_Curriculum.pdf',
       image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2 }, // Escala para mejorar la resolución
+      html2canvas: { scale: 1.2 }, // Ajustar el escalado para adaptarse mejor al tamaño A4
       jsPDF: { 
         unit: 'in', 
-        format: [13, 13], // Tamaño A4 en pulgadas
+        format: [8.27, 11.69], // Tamaño A4 en pulgadas
         orientation: 'portrait' // Vertical
       }
     };
