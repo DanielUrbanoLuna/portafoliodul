@@ -8,7 +8,7 @@ export const DescargarCvPdf = () => {
     const element = document.querySelector('.curriculum-container');
 
     // Aplica temporalmente un estilo específico para ajustar el tamaño al formato A4
-    element.style.width = '8.27in'; // Forzamos el ancho a A4 en pulgadas
+    element.style.width = '4.27in'; // Forzamos el ancho a A4 en pulgadas
     element.style.height = 'auto';  // Permitimos que la altura sea dinámica
     element.style.padding = '1rem'; // Opcional: Agregamos un padding para márgenes
 
