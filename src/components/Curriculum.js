@@ -1,27 +1,9 @@
 import React from 'react';
-import html2pdf from 'html2pdf.js';
+import { DescargarCvPdf } from './DescargarCvPdf';
 
 export const Curriculum = () => {
-  const handleDownloadPDF = () => {
-    // Selecciona el contenedor del currículum
-    const element = document.querySelector('.curriculum-container');
   
-    // Configura las opciones para html2pdf
-    const opt = {
-      margin: 0.5,
-      filename: 'Mi_Curriculum.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 0.3 }, // Ajustar el escalado si es necesario
-      jsPDF: { 
-        unit: 'in', 
-        format: [5, 13], // Tamaño A4 en pulgadas
-        orientation: 'portrait' 
-      }
-    };
-  
-    // Genera y descarga el PDF
-    html2pdf().from(element).set(opt).save();
-  };
+  <DescargarCvPdf />
 
   return (
     <div className='curriculum-container'>
@@ -29,9 +11,7 @@ export const Curriculum = () => {
 
         <h1 className='heading'>Curriculum Vitae</h1>
         {/* Botón de descarga del curriculum */}
-        <button className="boton-descargax" onClick={handleDownloadPDF}>
-              Descargar Curriculum
-        </button>
+        <DescargarCvPdf />
 
       </div>
       
@@ -90,9 +70,10 @@ export const Curriculum = () => {
           </div>
 
           {/* Botón de descarga del curriculum */}
-          <button className="boton-descarga" onClick={handleDownloadPDF}>
-            Descargar Curriculum
-          </button>
+          <div className='boton2'>
+            <DescargarCvPdf />
+          </div>
+          
         </div>
 
         {/* Columna derecha */}

@@ -129,24 +129,20 @@ html, body {
   gap: 1rem; /* Espacio entre el texto y el botón */
 }
 
-/* Botón de descarga */
-.boton-descarga {
-  display: block;
-  margin-top: auto; /* Empuja el botón hacia la parte inferior de la columna */
-  margin-left: 1rem;
-  margin-bottom: 1rem;
+.boton2 button {
   padding: 0.625rem 1.25rem;
-  width: 15rem;
   background-color: hsl(29, 97%, 47%);
   color: #fff;
-  border-radius: 0.3125rem;
   cursor: pointer;
-  text-align: center;
-  text-decoration: none;
   font-size: large;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 43rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
 }
 
-.boton-descarga:hover {
+.boton2 button:hover {
   background-color: #4ac94a;
 }
 
