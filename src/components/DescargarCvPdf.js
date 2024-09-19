@@ -14,7 +14,7 @@ export const DescargarCvPdf = () => {
 
     // Configura las opciones para html2pdf
     const opt = {
-      margin: 0.5,
+      margin: 0,
       filename: 'Mi_Curriculum.pdf',
       image: { type: 'jpeg', quality: 0.98 },
       html2canvas: { scale: 1 }, // Escala 1 para evitar distorsión
