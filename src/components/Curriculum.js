@@ -14,7 +14,7 @@ export const Curriculum = () => {
       html2canvas: { scale: 0.5 }, // Ajustar el escalado si es necesario
       jsPDF: { 
         unit: 'in', 
-        format: [9, 13], // Tamaño A4 en pulgadas
+        format: [5, 13], // Tamaño A4 en pulgadas
         orientation: 'portrait' 
       }
     };
