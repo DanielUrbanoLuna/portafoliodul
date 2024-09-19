@@ -1,5 +1,5 @@
-import React from 'react'
-import { Routes, Route, BrowserRouter, NavLink, Navigate } from 'react-router-dom';
+import React from 'react';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Inicio } from '../components/Inicio';
 import { Portafolio } from '../components/Portafolio';
 import { Servicios } from '../components/Servicios';
@@ -10,26 +10,25 @@ import { HeaderNav } from '../components/layout/HeaderNav';
 
 export const MisRutas = () => {
   return (
-    <BrowserRouter basename='/portafoliodul'>
-        {/*HEADER Y NAVEGACION*/}
-        <HeaderNav />
+    <HashRouter>
+      {/* HEADER Y NAVEGACION */}
+      <HeaderNav />
 
-        {/*CONTENIDO PRINCIPAL*/}
-        <section className='content'>
-          <Routes>
-              <Route path='/' element = {<Navigate to="/inicio" />} />
-              <Route path='/inicio' element = {<Inicio />} />
-              <Route path='/portafolio' element = {<Portafolio />} />
-              <Route path='/servicios' element = {<Servicios />} />
-              <Route path='/curriculum' element = {<Curriculum />} />
-              <Route path='/contacto' element = {<Contacto />} />
-              <Route path='*' element = {<h1 className='header'>Error 404</h1>} />
-          </Routes>
-        </section>
-                
-        {/*PIE DE PAGINA*/}
-        <Footer />
+      {/* CONTENIDO PRINCIPAL */}
+      <section className="content">
+        <Routes>
+          <Route path="/" element={<Navigate to="/inicio" />} />
+          <Route path="/inicio" element={<Inicio />} />
+          <Route path="/portafolio" element={<Portafolio />} />
+          <Route path="/servicios" element={<Servicios />} />
+          <Route path="/curriculum" element={<Curriculum />} />
+          <Route path="/contacto" element={<Contacto />} />
+          <Route path="*" element={<h1 className="header">Error 404</h1>} />
+        </Routes>
+      </section>
 
-    </BrowserRouter>
-  )
+      {/* PIE DE PAGINA */}
+      <Footer />
+    </HashRouter>
+  );
 }
