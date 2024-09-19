@@ -6,8 +6,9 @@
   </head>
   <body>
     <script type="text/javascript">
-      // Redirige a la página de inicio si se encuentra una ruta no válida
-      window.location.href = '/portafoliodul/inicio';
-    </script>
+        // Verifica si la ruta solicitada es incorrecta y redirige al inicio
+        var redirectTo = window.location.pathname.replace('/portafoliodul', '');
+        window.location.href = '/portafoliodul' + redirectTo;
+      </script>      
   </body>
 </html>
