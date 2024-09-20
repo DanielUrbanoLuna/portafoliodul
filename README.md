@@ -43,7 +43,7 @@ Puedes explorar mi portafolio en línea a través del siguiente enlace:
 
 ## 📄 **Ver Currículum**
 
-Descarga mi currículum actualizado en formato PDF desde el portafolio. Puedes encontrar el botón de descarga en la sección de Curriculum.
+Descarga mi currículum actualizado en formato PDF desde el portafolio. Puedes encontrar el botón de descarga en la sección de Curriculum y en la de Inicio.
 
 ## 💬 **Contacto**
 
