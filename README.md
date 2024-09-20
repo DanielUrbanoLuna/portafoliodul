@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+Portafolio de Daniel Urbano Luna
+Bienvenido a mi portafolio en línea. Aquí podrás explorar mis proyectos, servicios, y mi experiencia profesional en el desarrollo web. Este portafolio es una muestra de mi trabajo y habilidades adquiridas a lo largo de mi carrera como desarrollador.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🚀 Tecnologías y Habilidades Utilizadas
+Este portafolio ha sido desarrollado utilizando una variedad de tecnologías modernas y herramientas de desarrollo web. A continuación, se destacan algunas de las principales:
 
-## Available Scripts
+🌟 React.js con Hooks
+He utilizado React.js para construir la interfaz de usuario de este portafolio, aprovechando las características más recientes como:
 
-In the project directory, you can run:
+Hooks: Usados para manejar el estado y efectos secundarios en los componentes funcionales.
+useState para gestionar el estado de los componentes.
+useEffect para manejar efectos secundarios y realizar llamadas a APIs.
+🌐 React Router para Navegación
+La navegación en la aplicación se gestiona de manera eficiente mediante React Router, que permite una experiencia de usuario fluida y sin problemas:
 
-### `npm start`
+Routes y Navigation: Configuración de rutas para navegar entre las diferentes secciones del portafolio.
+NavLink: Enlaces activos que facilitan la navegación entre las páginas de manera intuitiva.
+📑 Integración de APIs
+He integrado varias APIs para mejorar la funcionalidad del portafolio:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Descarga de PDF: Utilizando la biblioteca html2pdf.js para permitir la descarga del currículum en formato PDF, ajustado para que se ajuste al tamaño de la página A4.
+mailto Link: Implementación de enlaces mailto: para facilitar el contacto directo por correo electrónico.
+🎨 Diseño y Estilo
+He prestado especial atención al diseño y la experiencia de usuario, asegurando que el portafolio sea visualmente atractivo y fácil de usar:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Diseño Responsive: El portafolio se adapta a diferentes tamaños de pantalla, proporcionando una experiencia de usuario consistente en dispositivos móviles y de escritorio.
+Estilos Modernos: Uso de CSS y clases personalizadas para garantizar una presentación profesional y atractiva.
+🔗 Explora el Portafolio
+Puedes explorar mi portafolio en línea a través del siguiente enlace:
 
-### `npm test`
+Mi Portafolio
+📄 Ver Currículum
+Descarga mi currículum actualizado en formato PDF desde el portafolio. Puedes encontrar el botón de descarga en la sección de Curriculum.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+💬 Contacto
+Si estás interesado en trabajar conmigo o tienes alguna pregunta, no dudes en contactarme. Encuentra mis datos de contacto en la sección de contacto del portafolio.
 
-### `npm run build`
+🚧 Próximos Pasos
+Estoy en constante mejora de este portafolio para reflejar mis habilidades y proyectos más recientes. Mantente al tanto de las actualizaciones y nuevas características que añadiré en el futuro.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Si necesitas más información o tienes alguna pregunta, no dudes en abrir un issue o contactar conmigo a través de los medios proporcionados en el portafolio.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+¡Gracias por visitar mi portafolio!
