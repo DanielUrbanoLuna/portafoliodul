@@ -34,27 +34,50 @@ html, body {
   height: 100%;
   margin: 0;
   font-size: 16px;
+  /* overflow-x previene scroll horizontal por cualquier elemento
+     que desborde accidentalmente su contenedor en móvil */
+  overflow-x: hidden;
+}
+
+/* Reset universal de imágenes: sin esto cualquier <img> sin clase
+   explícita puede superar el ancho del viewport y romper el layout */
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* ============================================
    LAYOUT
    ============================================ */
+
+/* En móvil el layout no tiene padding lateral: el header y footer
+   necesitan llegar a los bordes del viewport. Cada sección interna
+   gestiona su propio padding horizontal. */
 .layout {
   width: 100%;
-  padding: 0 var(--space-sm);
 }
 
 @media (min-width: 768px) {
   .layout {
     width: 90%;
     margin: 0 auto;
-    padding: 0;
   }
 }
 
 @media (min-width: 1100px) {
   .layout {
     width: 85%;
+  }
+}
+
+/* Padding lateral para el contenido de las páginas, no para header/footer */
+.content {
+  padding: 0 var(--space-sm);
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding: 0;
   }
 }
 
@@ -68,7 +91,9 @@ html, body {
   border-bottom: 5px solid var(--color-border);
   margin-bottom: var(--space-lg);
   background: var(--color-bg);
-  padding: var(--space-sm) 0;
+  /* padding lateral propio para que el contenido interno tenga
+     aire sin depender del padding del .layout padre */
+  padding: var(--space-sm);
   gap: var(--space-xs);
 }
 
@@ -78,8 +103,9 @@ html, body {
   justify-content: center;
 }
 
+/* Logo reducido en móvil para no dominar todo el espacio vertical */
 .header .logo span {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: bolder;
   line-height: 1;
 }
@@ -87,7 +113,7 @@ html, body {
 .header .logo h2 {
   margin-left: var(--space-sm);
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 0.875rem;
   text-transform: uppercase;
 }
 
@@ -109,21 +135,22 @@ html, body {
 .header li {
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
 }
 
 .header li a {
   color: black;
   text-decoration: none;
   transition: color 300ms;
-  padding: 0.25rem 0.375rem;
+  padding: 0.375rem 0.5rem;
   display: block;
 }
 
+/* Solo cambia color, no font-size: evita que el ítem activo
+   desplace a sus vecinos en el flex-wrap del nav móvil */
 .header .active,
 .header a:hover {
   color: var(--color-accent);
-  font-size: 1.125rem;
 }
 
 /* Desktop header */
@@ -150,6 +177,7 @@ html, body {
   .header .logo h2 {
     margin-left: 1.5625rem;
     flex-basis: 40px;
+    font-size: 1rem;
   }
 
   .header nav {
@@ -169,6 +197,7 @@ html, body {
     margin-right: 1.125rem;
   }
 
+  /* En desktop sí tiene sentido el salto de tamaño: hay espacio suficiente */
   .header .active,
   .header a:hover {
     font-size: 1.875rem;
@@ -180,6 +209,8 @@ html, body {
    ============================================ */
 .content {
   min-height: 400px;
+  /* El padding lateral se define más abajo junto a .layout
+     para que header y footer lleguen al borde del viewport */
 }
 
 footer {
