@@ -1,27 +1,27 @@
 import React from 'react';
 import html2pdf from 'html2pdf.js';
 
-export const DescargarCvPdf = () => {
+// Configuración fuera del handler para que no se recree en cada click
+// y para que sea visible y editable sin necesidad de entrar en el flujo del evento.
+const PDF_OPTIONS = {
+  margin: [0.5, 0.5, 0.5, 0.5],
+  filename: 'Mi_Curriculum.pdf',
+  image: { type: 'jpeg', quality: 0.98 },
+  html2canvas: { scale: 1 },
+  jsPDF: {
+    unit: 'in',
+    format: [18, 13],
+    orientation: 'portrait',
+  },
+};
 
+export const DescargarCvPdf = () => {
   const handleDownloadPDF = () => {
-    // Selecciona el contenedor del currículum
+    // querySelector en lugar de ref porque el nodo objetivo (.curriculum-container)
+    // puede estar montado en otro componente (Inicio renderiza Curriculum oculto).
+    // Un ref cruzado entre componentes desacoplados sería más frágil que este selector.
     const element = document.querySelector('.curriculum-container');
-  
-    // Configura las opciones para html2pdf
-    const opt = {
-      margin: [0.5, 0.5, 0.5, 0.5], // Margen (arriba, derecha, abajo, izquierda)
-      filename: 'Mi_Curriculum.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 1 }, // Ajustar la escala si es necesario
-      jsPDF: { 
-        unit: 'in', 
-        format: [18, 13], // Tamaño A4 en pulgadas
-        orientation: 'portrait' // Vertical
-      }
-    };
-  
-    // Genera y descarga el PDF
-    html2pdf().from(element).set(opt).save();
+    html2pdf().from(element).set(PDF_OPTIONS).save();
   };
 
   return (

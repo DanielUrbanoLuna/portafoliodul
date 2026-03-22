@@ -1,36 +1,33 @@
 import React from 'react';
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { Inicio } from '../components/Inicio';
+import { Inicio }     from '../components/Inicio';
 import { Portafolio } from '../components/Portafolio';
-import { Servicios } from '../components/Servicios';
+import { Servicios }  from '../components/Servicios';
 import { Curriculum } from '../components/Curriculum';
-import { Contacto } from '../components/Contacto';
-import { Footer } from '../components/layout/Footer';
-import { HeaderNav } from '../components/layout/HeaderNav';
+import { Contacto }   from '../components/Contacto';
+import { Footer }     from '../components/layout/Footer';
+import { HeaderNav }  from '../components/layout/HeaderNav';
 
-export const MisRutas = () => {
-  return (
-    <HashRouter>
-      {/* HEADER Y NAVEGACION */}
-      <HeaderNav />
+// HashRouter en lugar de BrowserRouter porque GitHub Pages no soporta
+// el fallback del servidor para rutas del History API: una recarga directa
+// de /portafolio devolvería 404. El hash (#/portafolio) se resuelve en cliente.
+export const MisRutas = () => (
+  <HashRouter>
+    <HeaderNav />
 
-      {/* CONTENIDO PRINCIPAL */}
-      <section className="content">
-        <Routes>
-          {/* Ruta inicial */}
-          <Route path="/" element={<Inicio />} />
-          <Route path="/inicio" element={<Inicio />} />
-          <Route path="/portafolio" element={<Portafolio />} />
-          <Route path="/servicios" element={<Servicios />} />
-          <Route path="/curriculum" element={<Curriculum />} />
-          <Route path="/contacto" element={<Contacto />} />
-          {/* Redirección si la ruta no existe */}
-          <Route path="*" element={<Navigate to="/inicio" />} />
-        </Routes>
-      </section>
+    <section className="content">
+      <Routes>
+        <Route path="/"           element={<Inicio />} />
+        <Route path="/inicio"     element={<Inicio />} />
+        <Route path="/portafolio" element={<Portafolio />} />
+        <Route path="/servicios"  element={<Servicios />} />
+        <Route path="/curriculum" element={<Curriculum />} />
+        <Route path="/contacto"   element={<Contacto />} />
+        {/* Catch-all: evita pantalla en blanco ante URLs desconocidas */}
+        <Route path="*"           element={<Navigate to="/inicio" />} />
+      </Routes>
+    </section>
 
-      {/* PIE DE PAGINA */}
-      <Footer />
-    </HashRouter>
-  );
-};
+    <Footer />
+  </HashRouter>
+);

@@ -1,213 +1,354 @@
+/* ============================================
+   CSS CUSTOM PROPERTIES
+   ============================================ */
+:root {
+  --color-accent:      hsl(29, 97%, 47%);
+  --color-accent-hover: #4ac94a;
+  --color-bg:          #e9e9d7;
+  --color-bg-dark:     hsl(0, 1%, 29%);
+  --color-bg-cv-right: hwb(236 4% 44%);
+  --color-bg-details:  hwb(0 87% 13%);
+  --color-text:        hsl(0, 5%, 18%);
+  --color-text-light:  #f5f5f5;
+  --color-text-muted:  hwb(0 50% 45%);
+  --color-border:      #1b1a1a;
+  --color-link-cv:     hsl(278, 75%, 63%);
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+
+  --radius-sm: 0.5rem;
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html, body {
   height: 100%;
   margin: 0;
-  font-size: 16px; /* Base para rem */
+  font-size: 16px;
 }
 
+/* ============================================
+   LAYOUT
+   ============================================ */
 .layout {
-  width: 85%;
-  margin: 0 auto;
+  width: 100%;
+  padding: 0 var(--space-sm);
 }
 
+@media (min-width: 768px) {
+  .layout {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+
+@media (min-width: 1100px) {
+  .layout {
+    width: 85%;
+  }
+}
+
+/* ============================================
+   HEADER & NAVIGATION  (mobile-first)
+   ============================================ */
 .header {
   display: flex;
-  height: 130px;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  border-bottom: 5px solid #1b1a1a;
-  margin-bottom: 45px;
-  background: #e9e9d7;
+  border-bottom: 5px solid var(--color-border);
+  margin-bottom: var(--space-lg);
+  background: var(--color-bg);
+  padding: var(--space-sm) 0;
+  gap: var(--space-xs);
 }
 
 .header .logo {
-  flex-grow: 1;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header .logo span {
-  font-size: 6.875rem; /* 110px -> 6.875rem */
+  font-size: 3.5rem;
   font-weight: bolder;
-  margin-top: -0.6875rem; /* -11px -> -0.6875rem */
+  line-height: 1;
 }
 
 .header .logo h2 {
-  margin-left: 1.5625rem; /* 25px -> 1.5625rem */
-  flex-basis: 40px;
+  margin-left: var(--space-sm);
   font-weight: 400;
+  font-size: 1rem;
   text-transform: uppercase;
 }
 
 .header nav {
-  flex-grow: 1;
+  width: 100%;
 }
 
 .header nav ul {
   display: flex;
-  justify-content: flex-end;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   list-style: none;
-  height: 130px;
+  margin: 0;
+  padding: 0;
+  gap: 0.25rem var(--space-xs);
 }
 
 .header li {
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 1.25rem; /* 20px -> 1.25rem */
-  margin-left: 1.125rem; /* 18px -> 1.125rem */
-  margin-right: 1.125rem;
+  font-size: 0.875rem;
 }
 
 .header li a {
   color: black;
   text-decoration: none;
-  transition: all 300ms;
+  transition: color 300ms;
+  padding: 0.25rem 0.375rem;
+  display: block;
 }
 
 .header .active,
 .header a:hover {
-  color: hsl(29, 97%, 47%);
-  font-size: 1.875rem; /* 30px -> 1.875rem */
+  color: var(--color-accent);
+  font-size: 1.125rem;
 }
 
+/* Desktop header */
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    height: 130px;
+    justify-content: center;
+    padding: 0;
+    gap: 0;
+    margin-bottom: 2.8125rem;
+  }
+
+  .header .logo {
+    flex-grow: 1;
+    justify-content: flex-start;
+  }
+
+  .header .logo span {
+    font-size: 6.875rem;
+    margin-top: -0.6875rem;
+  }
+
+  .header .logo h2 {
+    margin-left: 1.5625rem;
+    flex-basis: 40px;
+  }
+
+  .header nav {
+    flex-grow: 1;
+  }
+
+  .header nav ul {
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    height: 130px;
+    gap: 0;
+  }
+
+  .header li {
+    font-size: 1.25rem;
+    margin-left: 1.125rem;
+    margin-right: 1.125rem;
+  }
+
+  .header .active,
+  .header a:hover {
+    font-size: 1.875rem;
+  }
+}
+
+/* ============================================
+   MAIN CONTENT & FOOTER
+   ============================================ */
 .content {
   min-height: 400px;
 }
 
-.pie {
+footer {
   text-align: center;
-  font-size: 1.125rem; /* 18px -> 1.125rem */
-  border-top: 5px solid #1b1a1a;
-  margin-top: 5rem;
-  padding-top: 2.1875rem; /* 35px -> 2.1875rem */
-  background: #e9e9d7;
-  color: hwb(0 50% 45%);
+  font-size: 1.125rem;
+  border-top: 5px solid var(--color-border);
+  padding-top: 2.1875rem;
+  padding-bottom: var(--space-sm);
+  background: var(--color-bg);
+  color: var(--color-text-muted);
   width: 100%;
+  margin-top: auto;
 }
 
-.ini strong {
-  color: hsl(29, 97%, 47%);
-}
-
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
 .heading {
-  font-size: 3.4375rem; /* 55px -> 3.4375rem */
+  font-size: 2rem;
   font-style: italic;
   font-weight: 300;
 }
 
+@media (min-width: 768px) {
+  .heading {
+    font-size: 3.4375rem;
+  }
+}
+
+p {
+  color: var(--color-text);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ============================================
+   PAGES WRAPPER (Portafolio, Servicios, Contacto)
+   ============================================ */
+.pages {
+  padding-bottom: var(--space-xl);
+}
+
+/* ============================================
+   INICIO PAGE  (mobile-first)
+   ============================================ */
 .ini {
   font-family: 'Times New Roman', Times, serif;
   font-weight: 500;
-  margin-bottom: 8px;
-  margin-top: 5rem; /* 80px -> 5rem */
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-xs);
 }
 
-/* Flex container to align image and text side by side */
+.ini strong {
+  color: var(--color-accent);
+}
+
 .flex-container {
   display: flex;
-  align-items: center; /* Alinear verticalmente */
-  justify-content: flex-start; /* Alinear a la izquierda */
-  gap: 1rem; /* Espacio entre la imagen y el texto */
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  text-align: center;
 }
 
-/* Styling for the profile photo */
 .profile-photo2 {
-  width: 150px; /* Ajusta el tamaño de la imagen */
-  height: auto;
-  border-radius: 50%; /* Hace que la imagen sea redonda */
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
-/* Ensure the text content aligns properly */
 .text-content {
-  flex-grow: 1; /* Asegura que el texto crezca y ocupe el resto del espacio */
-}
-
-/* Estilo para la sección de descarga del botón */
-.download-container {
-  display: flex;
-  align-items: center; /* Alinear verticalmente en el centro */
-  gap: 1rem; /* Espacio entre el texto y el botón */
-}
-
-.boton2 button {
-  padding: 0.625rem 1.25rem;
-  background-color: hsl(29, 97%, 47%);
-  color: #fff;
-  cursor: pointer;
-  font-size: large;
-  border-radius: 5px;
-  text-decoration: none;
-  margin-top: 43rem;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-}
-
-.boton2 button:hover {
-  background-color: #4ac94a;
-}
-
-.descini {
-  margin-top: 0rem; 
-}
-
-.ini .intro-section img {
-  width: 30rem;
-  height: 30rem;
+  width: 100%;
 }
 
 .ini h2 {
-  font-size: 2.5rem; /* 40px -> 2.5rem */
+  font-size: 1.375rem;
 }
 
-.ini h3, p {
-  color: hsl(0, 5%, 18%);
-  font-size: 1.5625rem; /* 25px -> 1.5625rem */
+.ini h3 {
+  color: var(--color-text);
+  font-size: 1.125rem;
 }
 
 .ini a,
 .ini button {
+  display: inline-block;
   padding: 0.625rem 1.25rem;
-  background-color: hsl(29, 97%, 47%);
+  background-color: var(--color-accent);
   color: #fff;
   cursor: pointer;
-  font-size: large;
+  font-size: 1rem;
   border-radius: 5px;
   text-decoration: none;
-}
-
-.ini .enlace:hover {
-  background-color: white;
+  border: none;
+  transition: background-color 300ms;
 }
 
 .ini a:hover,
-.ini button:hover{
-  background-color: #4ac94a;
+.ini button:hover {
+  background-color: var(--color-accent-hover);
 }
 
-input[type="text"],
-textarea {
-  padding: 0.625rem; /* 10px -> 0.625rem */
-  margin: 1.125rem; /* 18px -> 1.125rem */
-  width: 18.75rem; /* 300px -> 18.75rem */
-  border-radius: 0.5rem;
-  border: solid 2px #5a5555;
+@media (min-width: 640px) {
+  .flex-container {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .profile-photo2 {
+    width: 150px;
+    height: 150px;
+  }
+
+  .ini h2 {
+    font-size: 2rem;
+  }
+
+  .ini h3 {
+    font-size: 1.375rem;
+  }
 }
 
-input[type="submit"],
-button {
-  padding: 0.625rem;
-  margin-top: 1.125rem;
-  border-radius: 0.5rem;
+@media (min-width: 1024px) {
+  .ini h2 {
+    font-size: 2.5rem;
+  }
+
+  .ini h3 {
+    font-size: 1.5625rem;
+  }
+}
+
+/* ============================================
+   DOWNLOAD CV BUTTON
+   ============================================ */
+.boton2 button {
+  padding: 0.625rem 1.25rem;
+  background-color: var(--color-accent);
+  color: #fff;
   cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  transition: background-color 300ms;
 }
 
-/* Ajustes generales del contenedor de trabajos */
+.boton2 button:hover {
+  background-color: var(--color-accent-hover);
+}
+
+/* ============================================
+   PORTAFOLIO PAGE  (mobile-first)
+   ============================================ */
 .works {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 1rem;
-  box-sizing: border-box;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  padding: var(--space-sm);
+}
+
+@media (min-width: 480px) {
+  .works {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
 }
 
 .work-item {
@@ -216,14 +357,14 @@ button {
   align-items: center;
   text-align: center;
   background: #fff;
-  border-radius: 0.5rem;
+  border-radius: var(--radius-sm);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease;
 }
 
 .work-item:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .work-item a {
@@ -234,223 +375,300 @@ button {
   width: 100%;
   height: auto;
   object-fit: cover;
-  max-width: 100%;
   display: block;
-  border-bottom: 2px solid #e9e9d7;
+  border-bottom: 2px solid var(--color-bg);
 }
 
-.experience-section a {
-  text-decoration: none;
+/* ============================================
+   SERVICIOS PAGE  (mobile-first)
+   ============================================ */
+.services {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding-bottom: var(--space-lg);
+}
+
+.service {
+  background: #fff;
+  padding: var(--space-md);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.service h2 {
+  margin-top: 0;
+}
+
+/* ============================================
+   CONTACTO PAGE  (mobile-first)
+   ============================================ */
+.contact {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-xs) 0;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.contact input,
+.contact textarea {
+  padding: 0.75rem;
+  margin-bottom: var(--space-sm);
+  border-radius: var(--radius-sm);
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.contact textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact input[type="submit"] {
+  background-color: var(--color-accent);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+  font-size: 1rem;
+  padding: 0.875rem;
+  width: 100%;
+}
+
+.contact input[type="submit"]:hover {
+  background-color: var(--color-accent-hover);
+}
+
+@media (min-width: 480px) {
+  .contact form {
+    max-width: 420px;
+  }
+
+  .contact input[type="submit"] {
+    width: auto;
+    min-width: 140px;
+  }
+}
+
+/* ============================================
+   GENERIC FORM ELEMENTS RESET
+   ============================================ */
+input[type="text"],
+textarea {
+  padding: 0.625rem;
+  border-radius: var(--radius-sm);
+  border: solid 2px #5a5555;
+  width: 100%;
+}
+
+input[type="submit"],
+button {
+  padding: 0.625rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+/* ============================================
+   CURRICULUM PAGE  (mobile-first)
+   ============================================ */
+.curriculum-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (min-width: 960px) {
+  .curriculum-container {
+    width: 8in;
+    max-width: 8in;
+  }
 }
 
 .titcont {
-  background-color: white;
   display: flex;
-  align-items: center; /* Alinea verticalmente el h1 y el botón */
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  padding: var(--space-sm) 0;
+  background-color: white;
 }
 
 .titcont h1 {
-  margin-right: 0.5rem; /* Reduce la separación entre el h1 y el botón */
+  margin: 0;
 }
 
 .titcont button {
   padding: 0.625rem 1.25rem;
-  background-color: hsl(29, 97%, 47%);
+  background-color: var(--color-accent);
   color: #fff;
   cursor: pointer;
-  font-size: large;
+  font-size: 1rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  transition: background-color 300ms;
 }
 
 .titcont button:hover {
-  background-color: #4ac94a;
+  background-color: var(--color-accent-hover);
 }
 
-.curriculum-container { 
-  width: 8in; /* Ajusta el ancho para A4 (8.27 in) */
-  max-width: 8in;
+@media (min-width: 480px) {
+  .titcont {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
+/* CV Grid: single column on mobile, two columns on tablet+ */
 .grid-container {
-  flex-grow: 1;
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: auto 1fr;
-  gap: 0;
-  min-height: 100vh; /* Asegura que la grid ocupe toda la altura de la pantalla */
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto 1fr;
+    min-height: 100vh;
+  }
 }
 
 .left-column {
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: hsl(0, 1%, 29%);
+  background-color: var(--color-bg-dark);
 }
 
-.left-column .photo-section {
-  height: 100%;
-  background-color: hsl(0, 1%, 29%);
-  display: flex;
-  align-items: stretch;
+.left-column img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  max-height: 280px;
 }
 
-.profile-photo {
-  width: 100%; /* Mantener el ancho automático */
-  height: 100%; /* Ajusta la altura según lo que necesites */
-  object-fit: cover; /* Para que la imagen se ajuste sin distorsión */
+@media (min-width: 768px) {
+  .left-column img {
+    max-height: none;
+    height: 100%;
+  }
 }
 
 .left-column .content-section {
-  background-color: hsl(0, 1%, 29%);
+  background-color: var(--color-bg-dark);
   color: white;
-  padding: 0.1rem;
-  box-sizing: border-box;
-  height: 26rem; /* Ajusta la altura a la misma que la sección de nombre y resumen */
+  padding: var(--space-sm);
 }
 
 .contact-info {
-  color: rgb(255, 255, 255);
-  font-size: 22px;
+  color: white;
+  font-size: 0.9375rem;
 }
 
 .contact-info p {
-  color: hwb(0 100% 0%);
+  color: white;
+  font-size: 0.9375rem;
+  margin: 0.375rem 0;
 }
 
 .contact-info a {
   text-decoration: none;
-  color: hsl(278, 75%, 63%);
+  color: var(--color-link-cv);
+}
+
+@media (min-width: 768px) {
+  .contact-info {
+    font-size: 1.125rem;
+  }
+
+  .contact-info p {
+    font-size: 1.125rem;
+  }
 }
 
 .content-section .skills,
-.languages, .courses {
-  font-size: 20px;
+.languages,
+.courses {
+  font-size: 0.9375rem;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .content-section .skills,
+  .languages,
+  .courses {
+    font-size: 1.125rem;
+  }
 }
 
 .right-column .profile-section {
-  background-color: hwb(236 4% 44%);
-  padding: 3rem;
-  height: 26rem;
+  background-color: var(--color-bg-cv-right);
+  padding: var(--space-md);
   box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .right-column .profile-section {
+    padding: var(--space-xl);
+    height: 26rem;
+  }
 }
 
 .right-column .details-section {
-  background-color: hwb(0 87% 13%);
-  padding: 2rem;
+  background-color: var(--color-bg-details);
+  padding: var(--space-md);
   box-sizing: border-box;
 }
 
+@media (min-width: 768px) {
+  .right-column .details-section {
+    padding: var(--space-lg);
+  }
+}
+
 .name-heading {
-  font-size: 2.5rem; /* Aumenta un poco el tamaño */
-  margin-bottom: 1rem; /* Controla el margen inferior */
-  margin-top: 2rem;
-  color: #f5f5f5;
+  font-size: 1.75rem;
+  margin-bottom: var(--space-sm);
+  margin-top: var(--space-sm);
+  color: var(--color-text-light);
   font-style: italic;
   font-weight: 400;
-  white-space: nowrap; /* Para evitar que el nombre se divida en varias líneas */
+}
+
+@media (min-width: 768px) {
+  .name-heading {
+    font-size: 2.5rem;
+    white-space: nowrap;
+    margin-top: 2rem;
+  }
 }
 
 .profile-summary {
-  line-height: 1.6;  /* Controla el espacio entre líneas */
-  margin-bottom: 15px; /* Ajusta el margen para que ocupe menos espacio */
-  color: #f5f5f5;
-  white-space: normal; /* Para el texto largo del resumen */
-  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-light);
+  font-size: 1rem;
 }
 
+@media (min-width: 768px) {
+  .profile-summary {
+    font-size: 1.4rem;
+  }
+}
 
+.experience-section a {
+  text-decoration: none;
+}
 
-footer {
-  text-align: center;
-  font-size: 1.125rem;
-  border-top: 5px solid #1b1a1a;
-  padding-top: 2.1875rem;
-  background: #e9e9d7;
-  color: hwb(0 50% 45%);
+.cv1 img {
   width: 100%;
-  margin-top: auto;
-}
-
-.contact {
-  display: flex;              /* Usar flexbox para centrar el contenido */
-  flex-direction: column;      /* Poner los elementos en una columna */
-  align-items: left;         /* Alinear los elementos a la izquierda horizontalmente */
-  justify-content: center;     /* Centrar verticalmente si es necesario */
-  padding: 1rem;               /* Agregar un poco de padding */
-}
-
-.contact form {
-  display: flex;
-  flex-direction: column;      /* Coloca los inputs uno debajo del otro */
-  width: 100%;                 /* Ocupa todo el ancho disponible */
-  max-width: 400px;            /* Establece un ancho máximo para que no sea demasiado grande */
-}
-
-.contact input, .contact textarea {
-  padding: 0.75rem;            /* Agregar padding interno a los inputs */
-  margin-bottom: 1rem;         /* Espacio entre los inputs */
-  border-radius: 8px;      /* Bordes redondeados */
-  border: 1px solid #ccc;      /* Borde para los inputs */
-  box-sizing: border-box;      /* Para asegurarse de que el padding no aumente el tamaño del input */
-}
-
-.contact input[type="submit"] {
-  background-color: hsl(29, 97%, 47%);  /* Color de fondo del botón */
-  color: white;                         /* Color del texto del botón */
-  cursor: pointer;                      /* Cambia el cursor al pasar sobre el botón */
-  transition: background-color 0.3s ease; /* Animación al hacer hover */
-  width: 11%;
-  margin-left: 1.8%;
-}
-
-.contact input[type="submit"]:hover {
-  background-color: #4ac94a; /* Color de fondo del botón al pasar el mouse */
-}
-
-@media screen and (max-width: 480px) {
-  .name-heading {
-    font-size: 1.5rem; /* Reducir el tamaño de la fuente para móviles pequeños */
-  }
-
-  .contact form {
-    max-width: 100%; /* Hacer que el formulario ocupe todo el ancho en móviles */
-    padding: 0.5rem; /* Reducir padding para ahorrar espacio */
-  }
-
-  .contact input, .contact textarea {
-    font-size: 0.875rem; /* Ajustar tamaño de fuente en inputs */
-  }
-
-  .contact input[type="submit"] {
-    width: 100%; /* Botón de enviar ocupa todo el ancho disponible */
-    margin-left: 0; /* Eliminar margen izquierdo */
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .grid-container {
-    grid-template-columns: 1fr; /* Una sola columna */
-    grid-template-rows: auto; /* Filas automáticas */
-  }
-
-  .header .logo h2 {
-    font-size: 1.5rem;
-    margin-left: 10px;
-  }
-
-  .header li {
-    font-size: 1rem;
-  }
-
-  .ini h2 {
-    font-size: 1.75rem;
-  }
-
-  .ini h3, p {
-    font-size: 1rem;
-  }
-
-  .name-heading {
-    font-size: 1.5rem;
-  }
-
+  max-width: 100%;
+  height: auto;
 }
